@@ -1,0 +1,101 @@
+[gd_scene load_steps=7 format=3 uid="uid://csx5wrju74a3q"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_6tqe3"]
+[ext_resource type="Texture2D" uid="uid://6rhx6w5f16ly" path="res://Assets/Backgrounds/MainMenuBackground.png" id="2_ib1an"]
+[ext_resource type="Texture2D" uid="uid://mxwoph1h7day" path="res://Assets/GUI/An upwards path sign.png" id="2_q83yi"]
+[ext_resource type="Texture2D" uid="uid://8wo5sws3w0nm" path="res://Assets/GUI/Start.png" id="3_n20gq"]
+[ext_resource type="Texture2D" uid="uid://dbwxtqb6ndd4j" path="res://Assets/GUI/Chain.png" id="3_nwk7p"]
+[ext_resource type="Texture2D" uid="uid://3rl4oyd45bb1" path="res://Assets/GUI/Quit.png" id="4_05b4p"]
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_6tqe3")
+
+[node name="MainMenuBackground" type="Sprite2D" parent="."]
+position = Vector2(592, 348)
+scale = Vector2(0.815, 0.815)
+texture = ExtResource("2_ib1an")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 720.0
+offset_top = 360.0
+offset_right = 1074.0
+offset_bottom = 450.0
+text = "Play"
+
+[node name="Sprite2D" type="Sprite2D" parent="Play"]
+position = Vector2(177, 48)
+scale = Vector2(0.714063, 0.637674)
+texture = ExtResource("3_n20gq")
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 724.0
+offset_top = 507.0
+offset_right = 1072.0
+offset_bottom = 598.0
+text = "Quit"
+
+[node name="Sprite2D" type="Sprite2D" parent="Quit"]
+position = Vector2(173, 42)
+scale = Vector2(0.714063, 0.650781)
+texture = ExtResource("4_05b4p")
+
+[node name="Sign Stuff" type="Node" parent="."]
+
+[node name="AnUpwardsPathSign" type="Sprite2D" parent="Sign Stuff"]
+position = Vector2(165.25, 329.837)
+scale = Vector2(0.278261, 0.278261)
+texture = ExtResource("2_q83yi")
+
+[node name="Chain" type="Sprite2D" parent="Sign Stuff"]
+position = Vector2(90.25, 245.837)
+scale = Vector2(0.271739, 0.271739)
+texture = ExtResource("3_nwk7p")
+
+[node name="Chain2" type="Sprite2D" parent="Sign Stuff"]
+position = Vector2(90.2501, 183.837)
+scale = Vector2(0.271739, 0.271739)
+texture = ExtResource("3_nwk7p")
+
+[node name="Chain3" type="Sprite2D" parent="Sign Stuff"]
+position = Vector2(90.2501, 153.837)
+scale = Vector2(0.271739, 0.271739)
+texture = ExtResource("3_nwk7p")
+
+[node name="Chain4" type="Sprite2D" parent="Sign Stuff"]
+position = Vector2(90.2501, 93.837)
+scale = Vector2(0.271739, 0.271739)
+texture = ExtResource("3_nwk7p")
+
+[node name="Chain5" type="Sprite2D" parent="Sign Stuff"]
+position = Vector2(90.2501, 31.837)
+scale = Vector2(0.271739, 0.271739)
+texture = ExtResource("3_nwk7p")
+
+[node name="Chain6" type="Sprite2D" parent="Sign Stuff"]
+position = Vector2(239.25, 245.837)
+scale = Vector2(0.271739, 0.271739)
+texture = ExtResource("3_nwk7p")
+
+[node name="Chain7" type="Sprite2D" parent="Sign Stuff"]
+position = Vector2(239.25, 183.837)
+scale = Vector2(0.271739, 0.271739)
+texture = ExtResource("3_nwk7p")
+
+[node name="Chain8" type="Sprite2D" parent="Sign Stuff"]
+position = Vector2(239.25, 153.837)
+scale = Vector2(0.271739, 0.271739)
+texture = ExtResource("3_nwk7p")
+
+[node name="Chain9" type="Sprite2D" parent="Sign Stuff"]
+position = Vector2(239.25, 93.837)
+scale = Vector2(0.271739, 0.271739)
+texture = ExtResource("3_nwk7p")
+
+[node name="Chain10" type="Sprite2D" parent="Sign Stuff"]
+position = Vector2(239.25, 31.837)
+scale = Vector2(0.271739, 0.271739)
+texture = ExtResource("3_nwk7p")
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
