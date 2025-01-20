@@ -6,15 +6,17 @@ const JUMP_VELOCITY = -600.0
 const DASHVELOCITY = 10000
 var JUMP = 2
 @onready var animated_sprite = $AnimatedSprite2D
+var dashNum = 1
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
-	#resets jump to 2 when player is on ground
+	#resets jump to 2 when player is on ground + resets dash when player is on ground
 	if is_on_floor():
 		JUMP = 2
+		dashNum = 1
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and JUMP > 0:
@@ -43,7 +45,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	# Adds dash movement
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("dash") and dashNum > 0:
+		dashNum -= 1
 		velocity.x = direction * DASHVELOCITY
 
 	move_and_slide()
